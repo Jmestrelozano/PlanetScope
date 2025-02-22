@@ -1,0 +1,21 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/LilitaOne-Regular.ttf",
+      "sha1": "3a4f50ed3543a0d3291ef171aeee5408072559bd"
+    },
+    {
+      "path": "src/assets/fonts/OpenSans-Bold.ttf",
+      "sha1": "5ca9b1fed6fa826bcd74a90624fe0fa2d9b10db9"
+    },
+    {
+      "path": "src/assets/fonts/OpenSans-Medium.ttf",
+      "sha1": "ab5f2c2782a0375d3ac7b834cf5e4bd5a34e0596"
+    },
+    {
+      "path": "src/assets/fonts/OpenSans-Regular.ttf",
+      "sha1": "02ff457da3d6a5cbd9b724d67ddfe04a475629e4"
+    }
+  ]
+}
