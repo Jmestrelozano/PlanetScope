@@ -3,7 +3,7 @@ import {TouchableOpacity} from 'react-native';
 
 import {CustomTabButtonProps} from '../../interfaces/components/navigation/customTabButton/customTabButton.interface';
 
-import {customTabButtonStyles} from './customTabButton.styles';
+import {styles} from './styles';
 
 export const CustomTabButton: FC<CustomTabButtonProps> = ({
   children,
@@ -11,7 +11,7 @@ export const CustomTabButton: FC<CustomTabButtonProps> = ({
 }) => {
   return (
     <TouchableOpacity
-      style={[customTabButtonStyles.tabButton]}
+      style={[styles.tabButton]}
       onPress={onPress}>
       {children}
     </TouchableOpacity>
