@@ -1,9 +1,10 @@
 import React, {useEffect} from 'react';
 import {StatusBar, useColorScheme} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
+import {NavigationContainer} from '@react-navigation/native';
+import BootSplash from 'react-native-bootsplash';
 
-import { LoaderSplash } from './src/presentation/components/common/loaders/loaderSplash/LoaderSplash';
+import {LoaderSplash} from './src/presentation/components/common/loaders/loaderSplash/LoaderSplash';
 import AppNavigator from './src/presentation/navigation/AppNavigator';
 
 import {useStore} from './src/state/store';
@@ -15,16 +16,24 @@ function App(): React.JSX.Element {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-  const {fetchPlanets, planets} = useStore(store => store);
+  const {
+    fetchPlanets,
+    planetState: {isLoading},
+  } = useStore(store => store);
 
   useEffect(() => {
-    fetchPlanets();
+    const init = async () => {
+      fetchPlanets();
+    };
+
+    init().finally(async () => {
+      await BootSplash.hide({fade: true});
+      console.log('BootSplash has been hidden successfully');
+    });
   }, []);
 
-  if (planets.length === 0) {
-    return (
-     <LoaderSplash />
-    );
+  if (isLoading) {
+    return <LoaderSplash />;
   }
 
   return (
