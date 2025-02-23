@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {View} from 'react-native';
 
 import {SearchInput} from '../../components/ui/inputs/searchInput/SearchInput';
@@ -9,7 +9,7 @@ import {ListEmpty} from '../../components/common/listItem/ListEmpty';
 import {SortControls} from '../../components/common/sort/SortControls';
 import {ErrorBoundary} from '../../components/common/errorBoundary/ErrorBoundary';
 
-import {useStore} from '../../../state/store';
+import {useStore} from '../../../infrastructure/state/store';
 import {styles} from './styles';
 
 const HomeScreen = () => {
