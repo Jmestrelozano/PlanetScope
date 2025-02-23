@@ -22,7 +22,7 @@ export class ErrorBoundary extends Component<
   }
 
   render() {
-    const {hasError: propError, errorMessage, children} = this.props;
+    const {hasError: propError, errorMessage, children, refreshRequest} = this.props;
     const {hasError: stateError} = this.state;
 
     if (stateError || propError) {
@@ -32,7 +32,7 @@ export class ErrorBoundary extends Component<
           <Text style={styles.message}>
             {errorMessage || 'An unexpected error occurred.'}
           </Text>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity onPress={refreshRequest} style={styles.button}>
             <Text style={styles.textButton}>Try again</Text>
           </TouchableOpacity>
         </View>
