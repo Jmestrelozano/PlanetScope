@@ -6,7 +6,7 @@ import {HeaderTitle} from '../../components/ui/headers/headerTitle/HeaderTitle';
 import {ListItems} from '../../components/common/listItem/ListItems';
 import { ListEmpty } from '../../components/common/listItem/ListEmpty';
 
-import {useStore} from '../../../state/store';
+import {useStore} from '../../../infrastructure/state/store';
 import {styles} from './styles';
 
 const FavoriteScreen = () => {
