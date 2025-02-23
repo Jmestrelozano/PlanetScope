@@ -4,10 +4,11 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import BootSplash from 'react-native-bootsplash';
 
+import { useStore } from './src/infrastructure/state/store';
+
 import {LoaderSplash} from './src/presentation/components/common/loaders/loaderSplash/LoaderSplash';
 import AppNavigator from './src/presentation/navigation/AppNavigator';
 
-import {useStore} from './src/state/store';
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
