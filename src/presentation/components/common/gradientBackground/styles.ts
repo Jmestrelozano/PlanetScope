@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-export const gradientBackgroundStyles = StyleSheet.create({
+export const styles = StyleSheet.create({
   gradientBackground: {
     flex: 1,
   },
