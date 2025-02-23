@@ -1,7 +1,7 @@
 import { StyleProp, TextStyle } from 'react-native';
 import { RFPercentage } from 'react-native-responsive-fontsize';
 
-export const headerStyles: { [key: string]: StyleProp<TextStyle> } = {
+export const styles: { [key: string]: StyleProp<TextStyle> } = {
   title: {
     fontSize: RFPercentage(5),
     fontFamily: 'LilitaOne-Regular',
