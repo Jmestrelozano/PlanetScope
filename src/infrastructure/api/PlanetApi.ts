@@ -1,8 +1,10 @@
+import { API_BASE_URL } from '../config/apiConfig';
+import { getPlanetQueryString } from '../config/queryConfig';
 import { IPlanetRepository } from "../../domain/repositories/IPlanetRepository";
 import { Planet } from "../../domain/models/Planet";
 
 export class PlanetApi implements IPlanetRepository {
-  private BASE_URL = 'https://api.le-systeme-solaire.net/rest/bodies?data=id,englishName,meanRadius,gravity,density,mass,massValue,massExponent,vol,volValue,volExponent,avgTemp,semimajorAxis&page=1&filter[]=isPlanet,eq,true';
+  private BASE_URL = `${API_BASE_URL}${getPlanetQueryString()}`;
 
   async fetchPlanets(): Promise<Planet[]> {
     const response = await fetch(this.BASE_URL);
