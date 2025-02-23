@@ -9,16 +9,57 @@ export const createPlanetSlice = (
   ) => void,
   get: () => PlanetSlice,
 ): PlanetSlice => ({
-  planets: [],
+  planetState: {
+    planets: [],
+    isLoading: false,
+    hasError: false,
+    errorMessage: '',
+  },
+  sortOrder: 'asc',
   fetchPlanets: async () => {
+    set({
+      planetState: {
+        ...get().planetState,
+        isLoading: true,
+        hasError: false,
+        errorMessage: '',
+      },
+    });
+
     try {
       const api = new PlanetApi();
       const response = await api.fetchPlanets();
 
-      set({planets: response});
+      set({
+        planetState: {
+          ...get().planetState,
+          planets: response,
+          isLoading: false,
+        },
+      });
     } catch (error) {
-      console.error('Error al obtener planetas:', error);
+      set({
+        planetState: {
+          ...get().planetState,
+          isLoading: false,
+          hasError: true,
+          errorMessage:
+            error instanceof Error ? error.message : 'there was a problem',
+        },
+      });
     }
   },
-  getPlanetById: (id: string) => get().planets.find(planet => planet.id === id),
+  getPlanetById: (id: string) =>
+    get().planetState.planets.find(planet => planet.id === id),
+  sortPlanets: (order: 'asc' | 'desc') => {
+    const sortedPlanets = [...get().planetState.planets].sort((a, b) =>
+      order === 'asc'
+        ? a.englishName.localeCompare(b.englishName)
+        : b.englishName.localeCompare(a.englishName),
+    );
+    set({
+      planetState: {...get().planetState, planets: sortedPlanets},
+      sortOrder: order,
+    });
+  },
 });
