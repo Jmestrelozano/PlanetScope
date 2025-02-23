@@ -15,11 +15,12 @@ import {styles} from './styles';
 const HomeScreen = () => {
   const {
     planetState: {planets, errorMessage, hasError},
+    fetchPlanets,
     sortPlanets,
   } = useStore(store => store);
   const [search, setSearch] = useState('');
 
-  const isEmptyList = [].length === 0;
+  const isEmptyList = planets.length === 0;
   const emptyMessage = isEmptyList
     ? {title: 'No planets available', description: 'Try again later'}
     : {title: 'No results found', description: 'Try another search'};
@@ -28,7 +29,7 @@ const HomeScreen = () => {
     <GradientBackground>
       <View style={styles.container}>
         <HeaderTitle title="PLANETS" />
-        <ErrorBoundary hasError={hasError} errorMessage={errorMessage}>
+        <ErrorBoundary refreshRequest={fetchPlanets} hasError={hasError} errorMessage={errorMessage}>
           <View style={styles.contentWrapper}>
             <View
               style={{
