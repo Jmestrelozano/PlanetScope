@@ -3,7 +3,7 @@ import {View, Text} from 'react-native';
 
 import { ItemDetailProps } from '../../interfaces/screens/details/itemDetail.interface';
 
-import {itemDetailStyles} from './detailsScreen.styles';
+import {itemDetailStyles} from './styles';
 
 export const ItemDetail: FC<ItemDetailProps> = ({label, value}) => {
   return (
