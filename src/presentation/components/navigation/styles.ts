@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-export const customTabButtonStyles = StyleSheet.create({
+export const styles = StyleSheet.create({
   tabButton: {
     height: 70,
     flex: 1,
