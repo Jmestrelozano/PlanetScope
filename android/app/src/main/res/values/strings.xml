@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">PlanetScope</string>
+    <string name="app_name">Solar Explorer</string>
+    <string name="welcome_to_myapp">Solar Explorer</string>
+    <string name="my_image_description">Cohete</string>
 </resources>
