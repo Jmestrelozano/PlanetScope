@@ -301,7 +301,7 @@ El listado de favoritos, maneja el guardado con el storage en el caso si el usua
 ![Animacion de carga](https://res.cloudinary.com/dwx09pwkr/image/upload/w_400/v1740351179/3astronautas/o0nah75mps9iwwgalybk.png)
 
 
-- **Hubo un error en la solicitud**: Si ocurre un error la aplicacion, generara una vista de error con un mensaje personalizado dependiendo del error que se retorne ya sea por el servicio o de la aplicacion. 
+- **Hubo un error en la solicitud**: Si ocurre un error la aplicacion (Falta de conexion, Errores de la solicitud, Servicio caido), generara una vista de error con un mensaje personalizado dependiendo del error que se retorne ya sea por el servicio o de la aplicacion. 
 
 ![Animacion de carga](https://res.cloudinary.com/dwx09pwkr/image/upload/w_400/v1740351346/3astronautas/seu85g6tvxkgsnzxnycy.png)
 
