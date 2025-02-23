@@ -1,4 +1,4 @@
-import {Planet} from '../../domain/models/Planet';
+import { Planet } from "../../../domain/models/Planet";
 
 export interface FavoriteSlice {
   favorites: Planet[];
