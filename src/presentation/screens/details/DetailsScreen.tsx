@@ -7,7 +7,7 @@ import {convertKelvinToCelsius} from '../../../application/useCases/convertKelvi
 import {formatNumber} from '../../../application/useCases/formatNumber';
 
 import {GradientBackground} from '../../components/common/gradientBackground/GradientBackground';
-import {HeaderTitle} from '../../components/ui/headers/HeaderTitle';
+import {HeaderTitle} from '../../components/ui/headers/headerTitle/HeaderTitle';
 import {ItemDetail} from './ItemDetail';
 import {CustomImage} from '../../components/common/customImage/CustomImage';
 import ChevronRight from '../../components/svgs/ChevronRight';
@@ -18,7 +18,7 @@ import {useStore} from '../../../state/store';
 
 import {DetailsScreenRouteProp} from '../../interfaces/navigation/routeTypes.interface';
 
-import {detailsScreenStyles} from './detailsScreen.styles';
+import {detailsScreenStyles} from './styles';
 
 const DetailsScreen = () => {
   const navigation = useNavigation();
