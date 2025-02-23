@@ -1,20 +1,18 @@
 import React, {useState} from 'react';
-import {ScrollView, Text, TouchableOpacity, View} from 'react-native';
+import {ScrollView, Text, View} from 'react-native';
 import {useNavigation, useRoute} from '@react-navigation/native';
 
-import {calculateSurfaceArea} from '../../../application/useCases/calculateSurfaceArea';
-import {convertKelvinToCelsius} from '../../../application/useCases/convertKelvinToCelsius';
-import {formatNumber} from '../../../application/useCases/formatNumber';
+import {calculateSurfaceAreaUseCase} from '../../../application/useCases/utils/calculateSurfaceArea';
+import {convertKelvinToCelsiusUseCase} from '../../../application/useCases/utils/convertKelvinToCelsius';
+import {formatNumberUseCase} from '../../../application/useCases/utils/formatNumber';
 
 import {GradientBackground} from '../../components/common/gradientBackground/GradientBackground';
-import {HeaderTitle} from '../../components/ui/headers/headerTitle/HeaderTitle';
 import {ItemDetail} from './ItemDetail';
 import {CustomImage} from '../../components/common/customImage/CustomImage';
-import ChevronRight from '../../components/svgs/ChevronRight';
-import Star from '../../components/svgs/Star';
+import {HeaderDetail} from './HeaderDetail';
 
 import {planetImages} from '../../../config/planetImages';
-import {useStore} from '../../../state/store';
+import { useStore } from '../../../infrastructure/state/store';
 
 import {DetailsScreenRouteProp} from '../../interfaces/navigation/routeTypes.interface';
 
@@ -25,12 +23,8 @@ const DetailsScreen = () => {
   const {
     params: {planetId},
   } = useRoute<DetailsScreenRouteProp>();
-  const {
-    getPlanetById,
-    addToFavorites,
-    removeFromFavorites,
-    isFavorite,
-  } = useStore(store => store);
+  const {getPlanetById, addToFavorites, removeFromFavorites, isFavorite} =
+    useStore(store => store);
   const [planet] = useState(getPlanetById(planetId));
 
   if (!planet) return null;
@@ -41,13 +35,16 @@ const DetailsScreen = () => {
   const volume = planet.vol.volValue * Math.pow(10, planet.vol.volExponent);
 
   const planetDetails = [
-    {label: 'Area', value: `${calculateSurfaceArea(planet.meanRadius)} Km`},
+    {
+      label: 'Area',
+      value: `${calculateSurfaceAreaUseCase(planet.meanRadius)} Km`,
+    },
     {
       label: 'Temperature',
-      value: `${convertKelvinToCelsius(planet.avgTemp)} °C`,
+      value: `${convertKelvinToCelsiusUseCase(planet.avgTemp)} °C`,
     },
-    {label: 'Mass', value: `${formatNumber(mass)} kg`},
-    {label: 'Vol', value: `${formatNumber(volume)} km³`},
+    {label: 'Mass', value: `${formatNumberUseCase(mass)} kg`},
+    {label: 'Vol', value: `${formatNumberUseCase(volume)} km³`},
     {label: 'Density', value: `${planet.density} g/cm³`},
     {label: 'Gravity', value: `${planet.gravity} m/s²`},
   ];
@@ -66,24 +63,12 @@ const DetailsScreen = () => {
     <GradientBackground>
       <View style={detailsScreenStyles.container}>
         <View style={detailsScreenStyles.content}>
-          <View
-            style={{
-              paddingHorizontal: 20,
-              width: '100%',
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-            }}>
-            <TouchableOpacity onPress={goBack}>
-              <ChevronRight rotation={180} />
-            </TouchableOpacity>
-
-            <HeaderTitle title={planet.englishName} />
-
-            <TouchableOpacity onPress={toggleFavorite}>
-              <Star fill={isFavorite(planet.id) ? 'gold' : 'white'} />
-            </TouchableOpacity>
-          </View>
+          <HeaderDetail
+            title={planet.englishName}
+            isFavorite={isFavorite(planet.id)}
+            onBack={goBack}
+            onToggleFavorite={toggleFavorite}
+          />
 
           <CustomImage
             imageSource={imageSource}
@@ -97,11 +82,7 @@ const DetailsScreen = () => {
             showsVerticalScrollIndicator={false}
             contentContainerStyle={detailsScreenStyles.scrollContent}>
             {planetDetails.map((item, index) => (
-              <ItemDetail
-                key={index}
-                label={item.label}
-                value={item.value}
-              />
+              <ItemDetail key={index} label={item.label} value={item.value} />
             ))}
           </ScrollView>
         </View>
