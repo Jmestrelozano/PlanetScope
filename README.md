@@ -330,4 +330,12 @@ Por ultimo ejecuta el siguiente comando:
 ```bash
   npm run android
 ```
+
+## Instalación de la Aplicación
+
+## Ubicación del APK
+El archivo APK generado se encuentra en:
+- android/app/build/outputs/apk/debug/app-debug.apk
+- raiz del projecto apk.zip
+
 ## Este proyecto está diseñado para ser modular y escalable, permitiendo agregar nuevas funcionalidades y mejorar la aplicación de manera eficiente.
