@@ -11,6 +11,12 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		D509C3DDB05F4B6C9DE84A72 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D047D545A6494C84ABD020C5 /* OpenSans-Bold.ttf */; };
+		DEE24841BA084A84BE955BC9 /* OpenSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 064087B93C73429DB92DAA87 /* OpenSans-Medium.ttf */; };
+		274283F618A14E85BAD608E5 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB2F30FC642F40739A9BFAAD /* OpenSans-Regular.ttf */; };
+		ACEACE85ADEA4CB8B9098BC5 /* LilitaOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BA66AB93C69472FAD7C0BCF /* LilitaOne-Regular.ttf */; };
+		9899059EC7314BB286E4EF0F /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 164A4897D03E4CC6AD235880 /* BootSplash.storyboard */; };
+		F2BDE7F9E0D54B808260F53C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70B94D5C46254C509A970E3C /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +41,12 @@
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = PlanetScope/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = PlanetScope/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		D047D545A6494C84ABD020C5 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; name = "OpenSans-Bold.ttf"; path = "../src/assets/fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		064087B93C73429DB92DAA87 /* OpenSans-Medium.ttf */ = {isa = PBXFileReference; name = "OpenSans-Medium.ttf"; path = "../src/assets/fonts/OpenSans-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CB2F30FC642F40739A9BFAAD /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; name = "OpenSans-Regular.ttf"; path = "../src/assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2BA66AB93C69472FAD7C0BCF /* LilitaOne-Regular.ttf */ = {isa = PBXFileReference; name = "LilitaOne-Regular.ttf"; path = "../src/assets/fonts/LilitaOne-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		164A4897D03E4CC6AD235880 /* BootSplash.storyboard */ = {isa = PBXFileReference; name = "BootSplash.storyboard"; path = "PlanetScope/BootSplash.storyboard"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		70B94D5C46254C509A970E3C /* Colors.xcassets */ = {isa = PBXFileReference; name = "Colors.xcassets"; path = "PlanetScope/Colors.xcassets"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = folder.assetcatalog; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +77,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
+				164A4897D03E4CC6AD235880 /* BootSplash.storyboard */,
+				70B94D5C46254C509A970E3C /* Colors.xcassets */,
 			);
 			name = PlanetScope;
 			sourceTree = "<group>";
@@ -93,6 +107,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				689377FE02C8441685E76044 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -115,6 +130,18 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		689377FE02C8441685E76044 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				D047D545A6494C84ABD020C5 /* OpenSans-Bold.ttf */,
+				064087B93C73429DB92DAA87 /* OpenSans-Medium.ttf */,
+				CB2F30FC642F40739A9BFAAD /* OpenSans-Regular.ttf */,
+				2BA66AB93C69472FAD7C0BCF /* LilitaOne-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -185,6 +212,12 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				D509C3DDB05F4B6C9DE84A72 /* OpenSans-Bold.ttf in Resources */,
+				DEE24841BA084A84BE955BC9 /* OpenSans-Medium.ttf in Resources */,
+				274283F618A14E85BAD608E5 /* OpenSans-Regular.ttf in Resources */,
+				ACEACE85ADEA4CB8B9098BC5 /* LilitaOne-Regular.ttf in Resources */,
+				9899059EC7314BB286E4EF0F /* BootSplash.storyboard in Resources */,
+				F2BDE7F9E0D54B808260F53C /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

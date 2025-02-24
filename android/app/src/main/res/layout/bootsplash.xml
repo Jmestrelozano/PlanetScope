@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bootsplash_background"
+    android:gravity="center">
+
+    <!-- Imagen del Splash -->
+    <ImageView
+        android:id="@+id/bootsplash_logo"
+        android:layout_width="match_parent"
+        android:layout_height="710dp"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/my_image_description"
+        android:src="@drawable/bootsplash_logo" />
+
+    <!-- Texto sobre la imagen -->
+    <TextView
+        android:id="@+id/bootsplash_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/bootsplash_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="245dp"
+        android:fontFamily="@font/lilita_regular"
+        android:gravity="center"
+        android:text="@string/welcome_to_myapp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25sp" />
+
+</RelativeLayout>
